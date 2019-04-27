@@ -202,52 +202,29 @@ MOBILE VERSION
 
 @media (max-width: 767px){
   
-
-
-   
-    .container {
-        width: 98%;
+    .container {        
         padding-top: 16px;
         padding-left: 28px;
         padding-bottom: 41px; 
         padding-right: 16px;
     }
-
     
     .bootcamp {               
        background-image: url(../img/chico3.jpg);       
        width: 101%;
-       padding: 0;
-       margin: 0;
-       margin-right: 30px;
-       border: none;
        background-size: 99vw 550px; 
        background-repeat: no-repeat;
-       overflow-x: hidden;
-     
+       overflow-x: hidden;     
     }
     .bootcamp:before {
         clip-path: polygon(0% 0, 98% 0%, 98% 64%, 0% 55.8%);
-       
-        height: 800px;
-        background-image: url();
-        background-repeat: no-repeat;
-        background-size: 100vw 440px; 
-        /*content: "";
-        position: absolute;
-        left: 0;
-        right: 0;
-        top: 0;
-        bottom: 0;
-        height: 723px;
-        background: rgba(58, 50, 168, 0.452);
-        filter: contrast(1.5);
-        clip-path: polygon(0 0, 100% 0, 100% 100%, 0 60.8%);*/
+        height: 800px; 
     }
 
     .bootcamp__heading{
         font-size: 20px;
         word-spacing: 12px;
+        font-weight: normal;
     }
 
     .bootcamp__heading::before{
@@ -259,8 +236,7 @@ MOBILE VERSION
     justify-content: center;
     align-items: center;
     }
-    .bootcamp__sub-heading{
-        border: 1px solid;        
+    .bootcamp__sub-heading{       
         margin-bottom: 48px;
         font-size: 18px;
         font-weight: 200;
@@ -269,14 +245,14 @@ MOBILE VERSION
     .bootcamp__lead {       
         font-size: 20px;        
         width: 250px;
-        font-weight: 100;
+        font-weight: lighter;
     }
 
     .bootcamp__metainfo {      
         display: flex;
-        flex-direction: column; 
-        width: 250px;            
+        flex-direction: column;            
     }
+
     .bootcamp__metainfo li::after {
         display: none;
     }
@@ -289,15 +265,16 @@ MOBILE VERSION
         flex-direction: row-reverse;
         justify-content: flex-end;
         margin-bottom: 16px;
+        font-weight: 300;  
     }
 
     .poligono{
         margin-top: 56px;
-        padding-top: 0;
+        padding-top: 10px;
         padding-left: 30px;
         padding-right: 37px;
         clip-path: polygon(0% 0%, 100% 9%, 100% 100%, 0% 100%);
-        width: 100%;
+      
         background-color: rgb(255, 246, 246);
         height: 700px;
     }
@@ -313,6 +290,6 @@ MOBILE VERSION
     color: var(--gray-dark);
 }
 .btn--info{    
-    width: 261px;
+    width: 250px;
 }
 }
