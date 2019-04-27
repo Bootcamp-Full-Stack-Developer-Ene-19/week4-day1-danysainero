@@ -11,11 +11,9 @@
     --purple: #8c40a3;
     --purple-transparent: #8c40a39d;
 }
-
 /*****************************
 GLOBAL
 *****************************/
-
 * {
     box-sizing: border-box;
     font-family: 'Encode Sans', sans-serif;
@@ -23,6 +21,7 @@ GLOBAL
 
 body {
     margin: 0;
+    overflow-x: hidden;
 }
 
 .container {
@@ -40,35 +39,41 @@ a {
 /*****************************
 HEADER
 *****************************/
+.bootcamp {
+    background-image: url(../img/chico2.jpg);
+    background-size: 100% 900px;
+    height: 900px; 
+}
 
-body {
-    background-image: url(../img/chico.jpg);
-    background-size: 100% 800px;
-    background-repeat: no-repeat;
-
+/*******************************************************************************************************************************************************************************
+clip-path no está soportado en muchos navegadores
+***********************************************************************************************************************************************************************/
+.bootcamp:before {
+    content: "";
+    position: absolute;
+    left: 0;
+    right: 0;
+    top: 0;
+    bottom: 0;
+    height: 723px;
+    background: rgba(58, 50, 168, 0.452);
+    filter: contrast(1.5);
+    clip-path: polygon(0 0, 100% 0, 100% 100%, 0 60.8%);
 }
 
 .bootcamp__heading {
     color: var(--white);
     font-size: var(--font-size-xl);
     font-weight: lighter;
-    padding-left:50px; 
+    padding-left: 50px;
     position: relative;
 }
 
 .bootcamp__heading::before {
-    content: "";
-    background-color: transparent;
-    height: 50px;
-    width: 50px;
+    content: url("../img/icono1.png");
     position: absolute;
     left: -15px;
-    top:-5px;
-    padding-bottom: 5px;
-    background-image: url(../img/icono1.png);
-    background-size: 60px 60px;
-    background-repeat: no-repeat;
-
+    top: -5px;
 }
 
 .bootcamp__sub-heading {
@@ -79,21 +84,58 @@ body {
 .bootcamp__lead {
     color: var(--white);
     font-size: 32px;
-    font-weight: 300;
+    font-weight: 100;
+    width: 762px;
 }
 
 .bootcamp__metainfo {
     list-style: none;
+    
+    padding-left: 0;
     display: flex;
-    border: 1px solid;
+    justify-content: space-between;
+    width: 373px;
 }
 
 .bootcamp__metainfo li {
-    margin-right: 61px;
+    color: var(--white);
+    font-size: var(--font-size-sm);
+    font-weight: 600;
+    display: flex;
+    flex-direction: column-reverse;
+    align-items: center;
+    position: relative;
 }
 
-.bootcamp__lead {
-    font-weight: 100;
+.bootcamp__metainfo li::after {
+    content: "";
+    border-top: 1.5px solid var(--white);
+    width: 60px;
+    margin: 12px 0;
+}
+
+.bootcamp__metainfo li::before {
+    content: "";
+    order: 1;
+}
+
+.bootcamp__metainfo li:first-of-type::before {
+    content: url("../img/icono2bis.png");
+}
+
+.bootcamp__metainfo li:nth-of-type(2)::before {
+    content: url("../img/icono3.png");
+}
+
+.bootcamp__metainfo li:nth-of-type(3)::before {
+    content: url("../img/icono4.png");
+}
+
+
+
+.bootcamp__header {
+    position: relative;
+    z-index: 20;
 }
 
 .bootcamp__header+h2 {
@@ -101,9 +143,10 @@ body {
     font-size: var(--font-size-lg);
 }
 
-.container>p {
+.poligono_texto {
     color: var(--gray-dark);
-
+    display: inline-block;
+    width: 593px;
 }
 
 .btn--info {
@@ -111,7 +154,6 @@ body {
     border: 1px solid var(--purple);
     font-size: var(--font-size-md);
     border-radius: 23.5px;
-    display: inline-block;
     height: 47px;
     width: 213px;
     display: flex;
@@ -121,16 +163,20 @@ body {
     margin-top: 40px;
 }
 
+/*******************************************************************************************************************************************************************************
+clip-path no está soportado en muchos navegadores
+***********************************************************************************************************************************************************************/
 .poligono {
     background-color: var(--white);
     height: 500px;
-    clip-path: polygon(0 0, 150% 85%, 100% 100%, 0% 100%);
+    width: 100vw;
+    clip-path: polygon(0px 0px, 100% 57%, 100% 100%, 0% 100%);
     position: absolute;
     left: 0;
     padding-top: 200px;
     padding-left: 86px;
     padding-right: 344px;
-    overflow-x: hidden;
+    z-index: 0;
 }
 
 .poligono h2 {
@@ -140,10 +186,7 @@ body {
 }
 
 /*.poligono{
-
     border: 30px solid rgba(221, 14, 49, 0.199);
-
-
     transform: rotate(12deg) translate(-250px);
     margin-top: 500px;
     overflow: hidden;
@@ -152,3 +195,124 @@ body {
 .poligono *{
     transform: rotate(-12deg) translate(250px) ;
 }*/
+
+/*******************************************************************************************************************************************************************************
+MOBILE VERSION
+***********************************************************************************************************************************************************************/
+
+@media (max-width: 767px){
+  
+
+
+   
+    .container {
+        width: 98%;
+        padding-top: 16px;
+        padding-left: 28px;
+        padding-bottom: 41px; 
+        padding-right: 16px;
+    }
+
+    
+    .bootcamp {               
+       background-image: url(../img/chico3.jpg);       
+       width: 101%;
+       padding: 0;
+       margin: 0;
+       margin-right: 30px;
+       border: none;
+       background-size: 99vw 550px; 
+       background-repeat: no-repeat;
+       overflow-x: hidden;
+     
+    }
+    .bootcamp:before {
+        clip-path: polygon(0% 0, 98% 0%, 98% 64%, 0% 55.8%);
+       
+        height: 800px;
+        background-image: url();
+        background-repeat: no-repeat;
+        background-size: 100vw 440px; 
+        /*content: "";
+        position: absolute;
+        left: 0;
+        right: 0;
+        top: 0;
+        bottom: 0;
+        height: 723px;
+        background: rgba(58, 50, 168, 0.452);
+        filter: contrast(1.5);
+        clip-path: polygon(0 0, 100% 0, 100% 100%, 0 60.8%);*/
+    }
+
+    .bootcamp__heading{
+        font-size: 20px;
+        word-spacing: 12px;
+    }
+
+    .bootcamp__heading::before{
+    margin-left: 15px;
+    margin-right: 0px;
+    width: 40px;
+    height: 40px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    }
+    .bootcamp__sub-heading{
+        border: 1px solid;        
+        margin-bottom: 48px;
+        font-size: 18px;
+        font-weight: 200;
+        width: 250px;
+    }
+    .bootcamp__lead {       
+        font-size: 20px;        
+        width: 250px;
+        font-weight: 100;
+    }
+
+    .bootcamp__metainfo {      
+        display: flex;
+        flex-direction: column; 
+        width: 250px;            
+    }
+    .bootcamp__metainfo li::after {
+        display: none;
+    }
+    
+    .bootcamp__metainfo li::before {
+        margin-right: 16px;
+    }
+    .bootcamp__metainfo li {       
+        display: flex;
+        flex-direction: row-reverse;
+        justify-content: flex-end;
+        margin-bottom: 16px;
+    }
+
+    .poligono{
+        margin-top: 56px;
+        padding-top: 0;
+        padding-left: 30px;
+        padding-right: 37px;
+        clip-path: polygon(0% 0%, 100% 9%, 100% 100%, 0% 100%);
+        width: 100%;
+        background-color: rgb(255, 246, 246);
+        height: 700px;
+    }
+    .poligono h2 {
+        font-size: 26px;
+        font-weight: 200;
+        width: 250px;
+        padding-top: 50px;
+    }
+.poligono_texto{
+    width: 95%;    
+    line-height: 1.81;
+    color: var(--gray-dark);
+}
+.btn--info{    
+    width: 261px;
+}
+}
